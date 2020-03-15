@@ -1,0 +1,29 @@
+Fire Emblem Three Houses Mod, containing all the Hero's Relics!
+
+Swords (and axes):
+-Sword Of The Creator
+-Sublime Sword Of The Creator
+-Blutgang
+-Thunderbrand
+-Aymr
+-Freikugel
+-Crusher
+
+Bow:
+-Failnaught
+
+Lances:
+-Areadbhar
+-Luin
+-Lance Of Ruin
+
+Staff:
+-Thyrsus
+
+Accessories:
+-Aegis Shield
+-Rafail Gem
+
+Other Items for crafting:
+Relic Ore (For making all the relics, found naturally or bought from Dryad)
+Heart Of Sothis (For making the Sublime Sword Of The Creator, drops from The Destroyer)
