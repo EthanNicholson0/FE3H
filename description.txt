@@ -27,3 +27,21 @@ Accessories:
 Other Items for crafting:
 Relic Ore (For making all the relics, found naturally or bought from Dryad)
 Heart Of Sothis (For making the Sublime Sword Of The Creator, drops from The Destroyer)
+
+v0.2:
+Added:
+-Sword Of The Creator Whip
+
+Changes:
+-Changed all weapon hitboxes
+-Added Black Beast projectile to Blutgang
+-Added regular projectile to Failnaught, moved laser to right click.
+-Axes can't be turned around
+
+Fixes:
+-Fixed the Lances from spawning behind the player
+-Changed some item descriptions to what they should have been
+
+v0.3:
+Added:
+-Officer's Academy Uniform (Shirt and legs)
