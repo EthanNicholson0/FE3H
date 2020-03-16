@@ -19,8 +19,8 @@ namespace FE3H.Items.Weapons
             item.damage = 50;
             item.melee = true;
             item.useTurn = true;
-            item.width = 40;
-            item.height = 40;
+            item.width = 76;
+            item.height = 76;
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 1;

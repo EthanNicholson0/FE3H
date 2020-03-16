@@ -9,13 +9,13 @@ namespace FE3H.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spear");
+            DisplayName.SetDefault("LanceOfRuin");
         }
 
         public override void SetDefaults()
         {
-            projectile.width = 18;
-            projectile.height = 18;
+            projectile.width = 57;
+            projectile.height = 55;
             projectile.aiStyle = 19;
             projectile.penetrate = -1;
             projectile.scale = 1.3f;

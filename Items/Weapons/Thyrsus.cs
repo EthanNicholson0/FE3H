@@ -19,8 +19,8 @@ namespace FE3H.Items.Weapons
             item.damage = 100;
             item.magic = true;
             item.mana = 12;
-            item.width = 40;
-            item.height = 40;
+            item.width = 80;
+            item.height = 78;
             item.useTime = 25;
             item.useAnimation = 25;
             item.useStyle = 5;

@@ -9,17 +9,18 @@ namespace FE3H.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spear");
+            DisplayName.SetDefault("Areadbhar");
         }
 
         public override void SetDefaults()
         {
-            projectile.width = 18;
-            projectile.height = 18;
+            projectile.width = 80;
+            projectile.height = 64;
             projectile.aiStyle = 19;
             projectile.penetrate = -1;
-            projectile.scale = 1.3f;
+            projectile.scale = 1f;
             projectile.alpha = 0;
+            projectile.spriteDirection = projectile.direction;
 
             projectile.hide = true;
             projectile.ownerHitCheck = true;

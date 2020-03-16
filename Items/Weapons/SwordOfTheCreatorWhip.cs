@@ -9,36 +9,38 @@ using static Terraria.ModLoader.ModContent;
 
 namespace FE3H.Items.Weapons
 {
-    public class SublimeSwordOfTheCreator : ModItem
+    public class SwordOfTheCreatorWhip : ModItem
     {
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("SwordOfTheCreator"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("The true power of the sword has been unlocked, but at what cost?");
+            Tooltip.SetDefault("A Hero's Relic said to be a gift to humanity from the Goddess herself.");
         }
 
         public override void SetDefaults()
         {
-            item.damage = 250;
-            item.melee = true;
-            item.useTurn = true;
-            item.width = 73;
-            item.height = 73;
-            item.useTime = 18;
-            item.useAnimation = 18;
-            item.useStyle = 1;
-            item.knockBack = 5;
-            item.value = Item.sellPrice(platinum: 2);
-            item.rare = 10;
+            item.width = 22;
+            item.height = 20;
+            item.value = Item.sellPrice(gold: 50);
+            item.rare = 7;
+            item.noMelee = true;
+            item.useStyle = ItemUseStyleID.HoldingOut;
+            item.useAnimation = 20;
+            item.useTime = 20;
+            item.knockBack = 4f;
+            item.damage = 100;
+            item.shoot = ModContent.ProjectileType<SotCWhip>();
+            item.shootSpeed = 50.0f;
             item.UseSound = SoundID.Item1;
-            item.autoReuse = true;
+            item.melee = true;
+            item.crit = 9;
+            item.channel = true;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<Items.Weapons.SwordOfTheCreator>());
-            recipe.AddIngredient(ItemType<Items.HeartOfSothis>());
+            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 150);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

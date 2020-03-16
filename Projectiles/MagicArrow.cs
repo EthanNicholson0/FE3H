@@ -9,12 +9,12 @@ namespace FE3H.Projectiles
 {
     // The following laser shows a channeled ability, after charging up the laser will be fired
     // Using custom drawing, dust effects, and custom collision checks for tiles
-    public class ExampleLaser : ModProjectile
+    public class MagicArrow : ModProjectile
     {
         // Use a different style for constant so it is very clear in code when a constant is used
 
         // The maximum charge value
-        private const float MAX_CHARGE = 0f;
+        private const float MAX_CHARGE = 50f;
         //The distance charge particle from the player center
         private const float MOVE_DISTANCE = 60f;
 
@@ -42,7 +42,7 @@ namespace FE3H.Projectiles
             projectile.height = 10;
             projectile.friendly = true;
             projectile.penetrate = -1;
-            projectile.tileCollide = false;
+            projectile.tileCollide = true;
             projectile.magic = true;
             projectile.hide = true;
         }
@@ -52,35 +52,11 @@ namespace FE3H.Projectiles
             // We start drawing the laser if we have charged up
             if (IsAtMaxCharge)
             {
-                DrawLaser(spriteBatch, Main.projectileTexture[projectile.type], Main.player[projectile.owner].Center,
-                    projectile.velocity, 10, projectile.damage, -1.57f, 1f, 1000f, Color.White, (int)MOVE_DISTANCE);
+
             }
             return false;
         }
-
-        // The core function of drawing a laser
-        public void DrawLaser(SpriteBatch spriteBatch, Texture2D texture, Vector2 start, Vector2 unit, float step, int damage, float rotation = 0f, float scale = 1f, float maxDist = 2000f, Color color = default(Color), int transDist = 50)
-        {
-            float r = unit.ToRotation() + rotation;
-
-            // Draws the laser 'body'
-            for (float i = transDist; i <= Distance; i += step)
-            {
-                Color c = Color.White;
-                var origin = start + i * unit;
-                spriteBatch.Draw(texture, origin - Main.screenPosition,
-                    new Rectangle(0, 26, 28, 26), i < transDist ? Color.Transparent : c, r,
-                    new Vector2(28 * .5f, 26 * .5f), scale, 0, 0);
-            }
-
-            // Draws the laser 'tail'
-            spriteBatch.Draw(texture, start + unit * (transDist - step) - Main.screenPosition,
-                new Rectangle(0, 0, 28, 26), Color.White, r, new Vector2(28 * .5f, 26 * .5f), scale, 0, 0);
-
-            // Draws the laser 'head'
-            spriteBatch.Draw(texture, start + (Distance + step) * unit - Main.screenPosition,
-                new Rectangle(0, 52, 28, 26), Color.White, r, new Vector2(28 * .5f, 26 * .5f), scale, 0, 0);
-        }
+         
 
         // Change the way of collision check of the projectile
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)

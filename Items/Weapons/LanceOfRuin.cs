@@ -11,14 +11,14 @@ namespace FE3H.Items.Weapons
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Blutgang"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("A Hero's Relic said to be a gift to humanity from by the Goddess herself.");
+            Tooltip.SetDefault("Lance of House Gautier");
         }
         public override void SetDefaults()
         {
             item.damage = 80;
             item.melee = true;
-            item.width = 32;
-            item.height = 32;
+            item.width = 55;
+            item.height = 57;
             item.scale = 1f;
             item.maxStack = 1;
             item.useTime = 24;

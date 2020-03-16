@@ -10,7 +10,7 @@ namespace FE3H.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Bow of House Reigan. Fires a beam of light");
+            Tooltip.SetDefault("Bow of House Reigan. Left Click fires an arrow, Right Click fires a beam of light");
         }
 
         public override void SetDefaults()
@@ -18,18 +18,41 @@ namespace FE3H.Items.Weapons
             item.damage = 200;
             item.noMelee = true;
             item.magic = true;
-            item.channel = true; //Channel so that you can held the weapon [Important]
+            item.channel = false; //Channel so that you can held the weapon [Important]
             item.mana = 5;
             item.rare = 8;
-            item.width = 28;
-            item.height = 30;
+            item.width = 32;
+            item.height = 90;
             item.useTime = 20;
             item.UseSound = SoundID.Item13;
             item.useStyle = 5;
             item.shootSpeed = 14f;
             item.useAnimation = 20;
-            item.shoot = ProjectileType<ExampleLaser>();
-            item.value = Item.sellPrice(silver: 3);
+            item.shoot = ProjectileType<ArrowMagic>();
+            item.value = Item.sellPrice(platinum: 1);
+        }
+
+        public override bool AltFunctionUse(Player player)//You use this to allow the item to be right clicked
+        {
+            return true;
+        }
+
+        public override bool CanUseItem(Player player)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                item.damage = 150;
+                item.shootSpeed = 50f;
+                item.useTime = 50;
+                item.channel = true; //Channel so that you can held the weapon [Important]
+                item.shoot = ProjectileType<ExampleLaser>();
+            }
+            else
+            {
+                item.shootSpeed = 14f;
+                item.shoot = ProjectileType<ArrowMagic>();
+            }
+            return base.CanUseItem(player);
         }
 
         public override void AddRecipes()
