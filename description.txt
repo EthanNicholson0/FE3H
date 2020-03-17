@@ -45,3 +45,18 @@ Fixes:
 v0.3:
 Added:
 -Officer's Academy Uniform (Shirt and legs)
+
+v0.4:
+Added:
+-Caduceus Staff
+-Spear Of Assal
+-The Inexhaustible
+-Sword Of Belgalta
+-Ochain Shield
+
+Changes:
+-Failnaught now shoots arrows with left click (ranged damage) and beam with right click (magic damage)
+-Thyrsus spells have been changed to Cursed Flame (left click) and Nebula Arcanum (right click, to represent Hades Omega)
+-Aegis Shield grants the endurance buff
+-Rafail Gem grants the Heartreach and Lifeforce buffs
+-Blutgang now has the Black Beast projectile (magic) on right click and melee attack on left click

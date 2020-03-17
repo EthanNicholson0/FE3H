@@ -17,9 +17,9 @@ namespace FE3H.Items.Weapons
         {
             item.damage = 200;
             item.noMelee = true;
-            item.magic = true;
+            item.ranged = true;
             item.channel = false; //Channel so that you can held the weapon [Important]
-            item.mana = 5;
+            item.mana = 50;
             item.rare = 8;
             item.width = 32;
             item.height = 90;
@@ -28,8 +28,10 @@ namespace FE3H.Items.Weapons
             item.useStyle = 5;
             item.shootSpeed = 14f;
             item.useAnimation = 20;
-            item.shoot = ProjectileType<ArrowMagic>();
+            item.shoot = 10;
+            item.useAmmo = AmmoID.Arrow;
             item.value = Item.sellPrice(platinum: 1);
+            item.autoReuse = true;
         }
 
         public override bool AltFunctionUse(Player player)//You use this to allow the item to be right clicked
@@ -42,15 +44,26 @@ namespace FE3H.Items.Weapons
             if (player.altFunctionUse == 2)
             {
                 item.damage = 150;
+                item.magic = true;
+                item.ranged = false;
                 item.shootSpeed = 50f;
+                item.useAnimation = 50;
+                item.useAmmo = 0;
                 item.useTime = 50;
                 item.channel = true; //Channel so that you can held the weapon [Important]
                 item.shoot = ProjectileType<ExampleLaser>();
             }
             else
             {
+                item.damage = 100;
                 item.shootSpeed = 14f;
-                item.shoot = ProjectileType<ArrowMagic>();
+                item.channel = false;
+                item.useAnimation = 20;
+                item.useTime = 20;
+                item.useAmmo = AmmoID.Arrow;
+                item.ranged = true;
+                item.magic = false;
+                item.shoot = 10;
             }
             return base.CanUseItem(player);
         }

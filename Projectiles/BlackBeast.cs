@@ -16,17 +16,12 @@ namespace FE3H.Projectiles
             projectile.magic = true;
             projectile.penetrate = -1;
             projectile.timeLeft = 600;
+            projectile.spriteDirection = projectile.direction;
         }
 
         public override void AI()
         {
             projectile.velocity.Y += projectile.ai[0];
-        }
-
-        public override bool OnTileCollide(Vector2 oldVelocity)
-        {
-            projectile.Kill();
-            return false;
         }
 
         public override void Kill(int timeLeft)

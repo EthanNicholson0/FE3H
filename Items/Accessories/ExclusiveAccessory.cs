@@ -135,15 +135,18 @@ namespace FE3H.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Shield of House Fraldarius. Increases defense by 20, negates knockback and increases immunity time.");
+            Tooltip.SetDefault("Shield of House Fraldarius." 
+                + "\nIncreases defense by 30"
+                + "\nNegates knockback"
+                + "\nReduces damage taken by 10%");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             // 50% melee and ranged damage increase
-            player.immuneTime += 1;
+            player.AddBuff(BuffID.Endurance, 2);
             player.noKnockback = true;
-            player.statDefense += 20;
+            player.statDefense += 30;
         }
 
         public override void RightClick(Player player)
@@ -174,14 +177,57 @@ namespace FE3H.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Gem necklace of House Lamine. Increases defense by 20 and life regen by 10.");
+            Tooltip.SetDefault("Gem necklace of House Lamine."
+                + "\nIncreases defense by 20"
+                + "\nIncreases heart pickup range"
+                + "\nIncreases max health by 20%");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             // 50% melee and ranged damage increase
             player.statDefense += 20;
-            player.lifeRegen += 10;
+            player.AddBuff(BuffID.Heartreach, 2);
+            player.AddBuff(BuffID.Lifeforce, 2);
+        }
+
+        public override void RightClick(Player player)
+        {
+            // This is an example of working with methods in the inheritance chain (you don't need this RightClick() override for your accessory otherwise)
+
+            // Here, before the parent's code is executed, we retrieve the name of the previously equipped item
+            // We know guaranteed that there will be an item to be replaced, since otherwise this hook wouldn't run (condition in CanRightClick())
+            string previousItemName = "";
+
+            Item accessory = FindDifferentEquippedExclusiveAccessory().accessory;
+            if (accessory != null)
+            {
+                previousItemName = accessory.Name;
+            }
+
+            // In order to preserve its expected behavior (right click swaps this and a different currently equipped accessory)
+            // we need to call the parent method via base.Method(arguments)
+            // Removing this line will cause this item to just vanish when right clicked
+            base.RightClick(player);
+
+            // Here we add additional things that happen on right clicking this item
+            Main.NewText("I just equipped " + item.Name + " in place of " + previousItemName + "!");
+            Main.PlaySound(SoundID.MaxMana, (int)player.position.X, (int)player.position.Y);
+        }
+    }
+    public class OchainShield : ExclusiveAccessory
+    {
+        public override void SetStaticDefaults()
+        {
+            Tooltip.SetDefault("Sacred Shield wielded by Saint Cichol. Increases defense by 20 and life regen by 10.");
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            // 50% melee and ranged damage increase
+            player.statDefense += 30;
+            player.AddBuff(BuffID.RapidHealing,2);
+            player.AddBuff(BuffID.Calm, 2);
         }
 
         public override void RightClick(Player player)

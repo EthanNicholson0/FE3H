@@ -6,11 +6,11 @@ using static Terraria.ModLoader.ModContent;
 
 namespace FE3H.Items.Weapons
 {
-    public class Thyrsus : ModItem
+    public class CaduceusStaff : ModItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Magic staff of House Gloucester. Left Click for Cursed Flame, Right Click for Hades Omega");
+            Tooltip.SetDefault("Sacred weapon once wielded by Saint Cethleann. Fire magic with Left Click, Ice magic with Right Click.");
             Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
         }
 
@@ -30,7 +30,7 @@ namespace FE3H.Items.Weapons
             item.rare = 7;
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
-            item.shoot = ProjectileID.CursedFlameFriendly;
+            item.shoot = ProjectileID.BallofFire;
             item.shootSpeed = 16f;
         }
 
@@ -43,20 +43,12 @@ namespace FE3H.Items.Weapons
         {
             if (player.altFunctionUse == 2)
             {
-                item.damage = 200;
-                item.mana = 100;
-                item.useTime = 70;
-                item.useAnimation = 70;
-                item.shoot = ProjectileID.NebulaArcanum;
-                item.shootSpeed = 1f;
+                item.shoot = ProjectileID.FrostBlastFriendly;
+                item.shootSpeed = 16f;
             }
             else
             {
-                item.damage = 100;
-                item.mana = 12;
-                item.useTime = 25;
-                item.useAnimation = 25;
-                item.shoot = ProjectileID.CursedFlameFriendly;
+                item.shoot = ProjectileID.BallofFire;
                 item.shootSpeed = 16f;
             }
             return base.CanUseItem(player);
@@ -65,7 +57,7 @@ namespace FE3H.Items.Weapons
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 150);
+            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 100);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();

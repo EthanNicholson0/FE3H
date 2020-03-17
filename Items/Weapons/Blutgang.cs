@@ -10,13 +10,14 @@ namespace FE3H.Items.Weapons
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Blutgang"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("Sword of House Edmund. Fires Black Beast heads with every swing.");
+            Tooltip.SetDefault("Sword of House Edmund. Right Click fires Black Beast heads.");
         }
 
         public override void SetDefaults()
         {
             item.damage = 100;
             item.useTurn = true;
+            item.mana = 20;
             item.width = 72;
             item.height = 64;
             item.useTime = 20;
@@ -38,6 +39,7 @@ namespace FE3H.Items.Weapons
         {
             if (player.altFunctionUse == 2)
             {
+                item.noMelee = true;
                 item.melee = false;
                 item.magic = true;
                 item.damage = 200;
@@ -47,6 +49,10 @@ namespace FE3H.Items.Weapons
             else
             {
                 item.melee = true;
+                item.noMelee = false;
+                item.magic = false;
+                item.damage = 100;
+                item.shoot = 0;
             }
             return base.CanUseItem(player);
         }
