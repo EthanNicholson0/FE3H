@@ -54,10 +54,6 @@ Added:
 -Sword Of Belgalta
 -Ochain Shield
 
-v0.5:
-Fixes:
--Made tooltips more consistent
-
 Changes:
 -Failnaught now shoots arrows with left click (ranged damage) and beam with right click (magic damage)
 -Thyrsus spells have been changed to Cursed Flame (left click) and Nebula Arcanum (right click, to represent Hades Omega)
