@@ -1,8 +1,11 @@
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using FE3H.Items.Placeable;
+using static Terraria.ModLoader.ModContent;
 
 namespace FE3H.Items.Accessories
 {
