@@ -6,36 +6,36 @@ using static Terraria.ModLoader.ModContent;
 
 namespace FE3H.Items.Weapons
 {
-	public class FireTome : ModItem
+	public class Fimbulvetr : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Tome of fire magic, shoots many fireballs");
+			Tooltip.SetDefault("Tome of ice magic, shoots blades of frost");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 
 		public override void SetDefaults() {
-			item.damage = 30;
+			item.damage = 40;
 			item.magic = true;
-			item.mana = 5;
-			item.width = 23;
-			item.height = 29;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.mana = 10;
+			item.width = 26;
+			item.height = 32;
+			item.useTime = 5;
+			item.useAnimation = 5;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4;
 			item.value = 10000;
-			item.rare = 5;
+			item.rare = 6;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.shoot = ProjectileID.BallofFire;
-			item.shootSpeed = 16f;
+			item.shoot = ProjectileID.Blizzard;
+			item.shootSpeed = 25f;
 		}
         
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 50);
+            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 80);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();

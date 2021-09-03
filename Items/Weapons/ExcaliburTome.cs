@@ -6,21 +6,21 @@ using static Terraria.ModLoader.ModContent;
 
 namespace FE3H.Items.Weapons
 {
-	public class FireTome : ModItem
+	public class ExcaliburTome : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Tome of fire magic, shoots many fireballs");
+			Tooltip.SetDefault("Tome of wind magic, shoots blades of wind");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 
 		public override void SetDefaults() {
-			item.damage = 30;
+			item.damage = 70;
 			item.magic = true;
-			item.mana = 5;
+			item.mana = 14;
 			item.width = 23;
-			item.height = 29;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.height = 28;
+			item.useTime = 20;
+			item.useAnimation = 20;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4;
@@ -28,14 +28,14 @@ namespace FE3H.Items.Weapons
 			item.rare = 5;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.shoot = ProjectileID.BallofFire;
-			item.shootSpeed = 16f;
+			item.shoot = ProjectileID.TerraBeam;
+			item.shootSpeed = 4f;
 		}
         
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 50);
+            recipe.AddIngredient(ItemType<Items.Placeable.RelicOre>(), 70);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();

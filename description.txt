@@ -8,6 +8,8 @@ Swords (and axes):
 -Aymr
 -Freikugel
 -Crusher
+-Sword Of Belgalta
+-Spear Of Assal
 
 Bow:
 -Failnaught
@@ -17,12 +19,20 @@ Lances:
 -Luin
 -Lance Of Ruin
 
-Staff:
+Staffs:
 -Thyrsus
+-Caduceus Staff
+
+Tomes:
+-Hades Omega Tome
+-Fire Tome
+-Excalibur Tome
+-Fimbulvetr Tome
 
 Accessories:
 -Aegis Shield
 -Rafail Gem
+-Ochain Shield
 
 Other Items for crafting:
 Relic Ore (For making all the relics, found naturally or bought from Dryad)
@@ -67,6 +77,10 @@ Added:
 -Hades Omega Tome
 -Fire Tome
 
+v0.8:
+Added:
+-Excalibur Tome
+-Fimbulvetr Tome
 
 Changes:
 -Failnaught now shoots arrows with left click (ranged damage) and beam with right click (magic damage)
