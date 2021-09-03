@@ -10,7 +10,7 @@ namespace FE3H.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Bow of House Reigan. Left Click fires an arrow, Right Click fires a beam of light");
+            Tooltip.SetDefault("Legendary bow of House Reigan. Left Click fires an arrow, Right Click fires a beam of light");
         }
 
         public override void SetDefaults()

@@ -11,7 +11,7 @@ namespace FE3H.Items.Weapons
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Blutgang"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("Lance of House Gautier");
+            Tooltip.SetDefault("Lance of House Gautier.");
         }
         public override void SetDefaults()
         {

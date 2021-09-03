@@ -11,7 +11,7 @@ namespace FE3H.Items.Weapons
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Crusher"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("Hammer of House Dominic");
+            Tooltip.SetDefault("Hammer of House Dominic.");
         }
 
         public override void SetDefaults()
