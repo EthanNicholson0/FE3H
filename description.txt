@@ -58,6 +58,10 @@ v0.5:
 Fixes:
 -Made tooltips more consistent
 
+v0.6:
+Fixes:
+-Made accessory recipes use Relic Ore rather than placeholder
+
 Changes:
 -Failnaught now shoots arrows with left click (ranged damage) and beam with right click (magic damage)
 -Thyrsus spells have been changed to Cursed Flame (left click) and Nebula Arcanum (right click, to represent Hades Omega)
